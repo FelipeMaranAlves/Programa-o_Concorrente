@@ -1,6 +1,6 @@
 public class Conta{
-    private double saldo;
-    private String id;
+    protected double saldo;
+    protected String id;
     public Conta(String id,double saldo){
         this.id = id;
         this.saldo = saldo;

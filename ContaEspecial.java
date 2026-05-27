@@ -1,5 +1,6 @@
 class ContaEspecial extends Conta {
     private double bonus;
+    private static final double TAXA = 0.01;
     public ContaEspecial(String numero){
         super (numero);
         this.bonus = 0.0;
@@ -13,7 +14,7 @@ class ContaEspecial extends Conta {
     }
     @Override
     public void creditar(double valor){
-        super.creditar(valor);
-        bonus = bonus + (valor * 0.01);
+        bonus = bonus + (valor * TAXA);
+        super.creditar(valor);       
     }
 }

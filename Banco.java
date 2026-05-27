@@ -1,26 +1,17 @@
-public class Banco {
-    private Conta[] contas;
-    private int indexC;
+public class Banco extends RepositorioContasArray{
     private double taxaJuros;
 
 
-    private Conta findConta(String numero)
+    private ContaAbstrata findConta(String numero)
     {
-        for (int i = 0; i < indexC; i++){
-            if (contas[i].getNumero().equals(numero)) {
-                return contas[i];
-            }
-        }
-        return null;
+        return procurar(numero);
     }
-    public Banco(){
-        this.contas = new Conta[100];
-        this.indexC = 0;
+    public Banco(double taxaJurosBanco){
+        super(100);
+        taxaJuros = taxaJurosBanco;
     }
     public void cadastrar(Conta c){
-        if (indexC > 100){throw new RuntimeException("Lmite de contas atingido");        }
-        this.contas[indexC+1] = c;
-        this.indexC += 1;
+
     }
 
     public void creditar(String num, double valor){
@@ -36,7 +27,7 @@ public class Banco {
     }
 
     public void renderJuros(String num){
-        Conta c =findConta(num);
+        ContaAbstrata c = findConta(num);
             if (c instanceof Poupanca){
                 ((Poupanca) c).renderJuros(taxaJuros);
             }
@@ -46,7 +37,7 @@ public class Banco {
         }
 
     public void renderBonus(String num){
-        Conta c = findConta(num);
+        ContaAbstrata c = findConta(num);
         if (c instanceof ContaEspecial){
             ((ContaEspecial)c).renderBonus();
         }

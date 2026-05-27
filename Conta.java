@@ -1,21 +1,11 @@
-public class Conta{
+public class Conta extends ContaAbstrata{
     protected double saldo;
     protected String id;
     public Conta(String id){
-        this.id = id;
-        this.saldo = 0;
+            super(id);
     }
-    public void creditar(double cred){
-        this.saldo += cred;
-    }
+    @Override
     public void debitar(double deb){
         this.saldo -= deb;
-    }
-    public double getSaldo(){
-        return this.saldo;
-    }
-
-    public String getNumero(){
-        return this.id;
     }
 }

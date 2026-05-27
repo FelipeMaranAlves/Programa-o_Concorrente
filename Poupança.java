@@ -1,8 +1,8 @@
 class Poupanca extends Conta{
     public Poupanca(String id){
-        super(id,0);
+        super(id);
     }
-    public void renderJuors(double Taxa){
+    public void renderJuros(double Taxa){
         this.saldo = this.saldo * Taxa;
     }
 }

@@ -1,9 +1,9 @@
 public class Conta{
     protected double saldo;
     protected String id;
-    public Conta(String id,double saldo){
+    public Conta(String id){
         this.id = id;
-        this.saldo = saldo;
+        this.saldo = 0;
     }
     public void creditar(double cred){
         this.saldo += cred;
@@ -11,7 +11,7 @@ public class Conta{
     public void debitar(double deb){
         this.saldo -= deb;
     }
-    public Double getSaldo(){
+    public double getSaldo(){
         return this.saldo;
     }
 

@@ -1,6 +1,6 @@
 public class TestaConta {
   public static void main(String[] args) {
-    Conta c = new Conta("123-X", 8.01);
+    Conta c = new Conta("123-X");
     // Conta c = new Conta("123-X");
     System.out.println("Conta "+c.getNumero());
     System.out.println(" saldo "+c.getSaldo());

@@ -1,3 +1,4 @@
+package Banco;
 public class Conta extends ContaAbstrata{
     protected double saldo;
     protected String id;

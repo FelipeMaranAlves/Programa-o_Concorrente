@@ -1,3 +1,4 @@
+package Banco;
 public interface RepositorioContas {
     void inserir(ContaAbstrata conta);
     ContaAbstrata procurar(String numero) throws CNEException;

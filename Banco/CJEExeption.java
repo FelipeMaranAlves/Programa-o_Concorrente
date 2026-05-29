@@ -1,3 +1,4 @@
+package Banco;
 public class CJEExeption extends Exception {
     String numero;
     CJEExeption(String numero){

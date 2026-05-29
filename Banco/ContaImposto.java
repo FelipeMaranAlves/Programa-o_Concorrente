@@ -1,3 +1,4 @@
+package Banco;
 public class ContaImposto extends Conta{
     private static final double CPMF = 0.001;
     public ContaImposto(String num){

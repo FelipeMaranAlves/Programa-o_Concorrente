@@ -1,3 +1,4 @@
+package Banco;
 public class SIException extends Exception{
     private double saldo;
     private String numero;

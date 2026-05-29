@@ -1,3 +1,4 @@
+package Banco;
 public class Banco extends RepositorioContasArray{
     private double taxaJuros;
 

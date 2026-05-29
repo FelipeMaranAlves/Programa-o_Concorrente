@@ -1,3 +1,4 @@
+package Banco;
 class ContaEspecial extends Conta {
     private double bonus;
     private static final double TAXA = 0.01;

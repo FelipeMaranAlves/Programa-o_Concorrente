@@ -1,3 +1,4 @@
+package Banco;
 public abstract class ContaAbstrata {
     private String numero;
     private double saldo;

@@ -5,7 +5,8 @@ public class Conta extends ContaAbstrata{
             super(id);
     }
     @Override
-    public void debitar(double deb){
+    public void debitar (double deb) throws SIException {
+        if (deb < saldo){SIException e; e = new SIException(id, saldo);throw e;}
         this.saldo -= deb;
     }
 }

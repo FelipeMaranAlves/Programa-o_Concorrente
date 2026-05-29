@@ -19,5 +19,5 @@ public abstract class ContaAbstrata {
     protected void setSaldo(double saldo){
         this.saldo = saldo;
     }
-    public abstract void debitar(double valor);
+    public abstract void debitar(double valor) throws SIException;
 }

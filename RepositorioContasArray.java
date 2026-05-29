@@ -5,16 +5,16 @@ public class RepositorioContasArray implements RepositorioContas{
         contas = new ContaAbstrata[100];
         indexC = size -1;
     }
-    public ContaAbstrata procurar(String numero){
+    public ContaAbstrata procurar(String numero) throws CNEException{
         for (int i = 0; i < indexC; i++){
             if (contas[i].getNumero().equals(numero)) {
                 return contas[i];
             }
         }
-        return null;
+        CNEException e;e = new CNEException();
+        throw e;
     }
-    public void inserir(ContaAbstrata conta){
-        if (indexC > contas.length){throw new RuntimeException("Limite de contas atingido");        }
+    public void inserir(ContaAbstrata conta){ // nao checo o tamanho restante do array, vai dar problema
         this.contas[indexC+1] = conta;
         this.indexC += 1;
     }
@@ -39,7 +39,9 @@ public class RepositorioContasArray implements RepositorioContas{
         }
     }
     public boolean existe(String numero){
-        if (procurar(numero) != null){return true;}
+        try{procurar(numero);}
+        catch(CNEException e){}
+        finally{}
         return false;
     }
 }

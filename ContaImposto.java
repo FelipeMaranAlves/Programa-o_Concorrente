@@ -6,6 +6,8 @@ public class ContaImposto extends Conta{
     @Override
     public void debitar(double valor){
         double imposto = valor * CPMF;
-        super.debitar(valor + imposto);
+        try{super.debitar(valor + imposto);}
+        catch(SIException e){}
+        finally{} 
     }
 }

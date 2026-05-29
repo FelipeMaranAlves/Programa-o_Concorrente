@@ -3,7 +3,9 @@ public class Main {
 Conta conta;
 conta = new ContaEspecial("21.342-7");
 ((Conta)conta).creditar(200.00);
-conta.debitar(100.00);
+try{conta.debitar(100.00);}
+catch(SIException e){}
+finally{}
 if (conta instanceof ContaEspecial) {
 ((ContaEspecial) conta).renderBonus();
 }
